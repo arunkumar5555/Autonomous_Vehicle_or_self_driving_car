@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+  <sdf version="1.6">
+    <world name="default">
+
+    <!-- Plugin dummy -->
+    <plugin name="hello" filename="libhello.so"/>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <pose>0.0 0.0 0.0 0 0 0</pose>
+      <uri>model/Building</uri>
+    </include>
+
+
+    <include>
+      <pose>4.0 0.0 0.1 0 0 0</pose>
+      <name>openbot_1</name>
+      <uri>model/Openbot</uri>
+    </include>
+
+    <include>
+      <pose>4.0 1.75 0.1 0 0 0</pose>
+      <name>openbot_2</name>
+      <uri>model/Openbot</uri>
+    </include>
+
+
+    <include>
+      <pose>-0.097308 5.42984 0 0 -0 0</pose>
+      <uri>model://telephone_pole</uri>
+    </include>
+
+    <include>
+      <pose>-2.83389 1.70886 0 0 -0 0</pose>
+      <name>table_1</name>
+      <uri>model://table</uri>
+    </include>
+
+    <include>
+      <pose>-4.58986 -2.14855 0 0 -0 0</pose>
+      <name>table_2</name>
+      <uri>model://table</uri>
+    </include>
+
+
+    <include>
+      <pose>0.490431 0.599885 0 0 -0 0</pose>
+      <name>table_3</name>
+      <uri>model://table</uri>
+    </include>
+
+
+    </world>
+  </sdf>

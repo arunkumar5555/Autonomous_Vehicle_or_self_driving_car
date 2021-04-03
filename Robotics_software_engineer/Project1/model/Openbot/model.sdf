@@ -1,0 +1,312 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="open_bot">
+    <static>false</static>
+    <link name='chassis'>
+
+        <pose>0 0 .01 0 0 0</pose>
+        <collision name='collision_bottom'>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/body_bottom.stl</uri>
+                </mesh>
+            </geometry>
+        </collision>
+
+        <visual name='visual_bottom'>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/body_bottom.stl</uri>
+                </mesh>
+            </geometry>
+        </visual>
+
+        <collision name='collision_top'>
+            <pose>.009 -0.002 0.030 0 0 0</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/body_top.stl</uri>
+                </mesh>
+            </geometry>
+        </collision>
+
+        <visual name='visual_top'>
+            <pose>.009 -0.002 0.030 0 0 0</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/body_top.stl</uri>
+                </mesh>
+            </geometry>
+            <material>
+                <lighting>1</lighting>
+                <script>
+                    <uri>file://media/materials/scripts/gazebo.material</uri>
+                    <name>Gazebo/Grey</name>
+                </script>
+                <shader type='pixel'>
+                    <normal_map>__default__</normal_map>
+                </shader>
+                <ambient>0.2 0.2 0.9 1</ambient>
+                <diffuse>0.7 0.7 0.7 1</diffuse>
+                <specular>0.01 0.01 0.01 1</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+
+        </visual>
+
+
+        <collision name='collision_phone_mount_bottom'>
+            <pose>-0.048 -0.003 0.031 0 -1.5707 -1.5707</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/phone_mount_bottom.stl</uri>
+                </mesh>
+            </geometry>
+        </collision>
+
+        <visual name='visual_phone_mount_bottom'>
+            <pose>-0.048 -0.003 0.031 0 -1.5707 -1.5707</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/phone_mount_bottom.stl</uri>
+                </mesh>
+            </geometry>
+        </visual>
+
+
+        <collision name='collision_phone_mount_top'>
+            <pose>-0.048 -0.003 -0.015 0 -1.5707 -1.5707</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/phone_mount_top.stl</uri>
+                </mesh>
+            </geometry>
+        </collision>
+
+        <visual name='visual_phone_mount_top'>
+            <pose>-0.048 -0.003 -0.015 0 -1.5707 -1.5707</pose>
+            <geometry>
+                <mesh>
+                    <scale>.001 .001 .001</scale>
+                    <!-- https://github.com/intel-isl/OpenBot/blob/master/body/README.md -->
+                    <uri>model/Openbot/meshes/phone_mount_top.stl</uri>
+                </mesh>
+            </geometry>
+        </visual>
+
+
+        <collision name='collision_phone'>
+            <pose> -0.025 -0.07 0.092 0 -1.5707 0</pose>
+            <geometry>
+                <mesh>
+                    <scale>.01 .01 .01</scale>
+                    <uri>model/Openbot/meshes/phone.stl</uri>
+                </mesh>
+            </geometry>
+        </collision>
+
+        <visual name='visual_phone'>
+            <pose> -0.025 -0.07 0.092 0 -1.5707 0</pose>
+            <geometry>
+                <mesh>
+                    <scale>.01 .01 .01</scale>
+                    <uri>model/Openbot/meshes/phone.stl</uri>
+                </mesh>
+            </geometry>
+        </visual>
+
+    </link>
+
+    <link name="back_left_wheel">
+        <pose>.072 .070 0.02 0 1.5707 1.5707</pose>
+        <collision name="collision">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <link name="back_right_wheel">
+        <pose>.072 -0.055 0.02 0 1.5707 1.5707</pose>
+        <collision name="collision">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <link name="front_left_wheel">
+        <pose>-0.045 .070 0.02 0 1.5707 1.5707</pose>
+        <collision name="collision">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <link name="front_right_wheel">
+        <pose>-.045 -.055 0.02 0 1.5707 1.5707</pose>
+        <collision name="collision">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <geometry>
+            <cylinder>
+                <radius>.030</radius>
+                <length>.020</length>
+            </cylinder>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <joint type="revolute" name="front_left_wheel_hinge">
+        <pose>0 0 0.02 0 0 0</pose>
+        <child>front_left_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+            <xyz>0 0 -1</xyz>
+        </axis>
+    </joint>
+
+    <joint type="revolute" name="front_right_wheel_hinge">
+        <pose>0 0 0.02 0 0 0</pose>
+        <child>front_right_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+            <xyz>0 0 -1</xyz>
+        </axis>
+    </joint>
+
+    <joint type="revolute" name="back_left_wheel_hinge">
+        <pose>0 0 0.02 0 0 0</pose>
+        <child>back_left_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+            <xyz>0 0 -1</xyz>
+        </axis>
+    </joint>
+
+    <joint type="revolute" name="back_right_wheel_hinge">
+        <pose>0 0 0.02 0 0 0</pose>
+        <child>back_right_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+            <xyz>0 0 -1</xyz>
+        </axis>
+    </joint>
+
+
+    <model name='model_camera'>
+      <pose>-0.033 0.0428 0.102 0 0 3.14159</pose>
+      <link name='phone_camera'>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000166667</ixx>
+            <iyy>0.000166667</iyy>
+            <izz>0.000166667</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision_phone_camera'>
+          <geometry>
+            <box>
+              <size>0.005 0.005 0.005</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual_phone_camera'>
+          <geometry>
+            <box>
+              <size>0.005 0.005 0.005</size>
+            </box>
+          </geometry>
+        </visual>
+
+        <sensor name='camera' type='camera'>
+          <camera name='__default__'>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>4096</width>
+              <height>2304</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>1</visualize>
+        </sensor>
+      </link>
+    </model>
+
+    <joint name="camera_joint" type="fixed">
+      <child>model_camera::phone_camera</child>
+      <parent>chassis</parent>
+    </joint>
+
+
+  </model>
+</sdf>
